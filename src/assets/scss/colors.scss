@@ -1,0 +1,11 @@
+// main color
+$color-text: #3b3d62;
+$color-background: #fff;
+$color-yellow: #f3dc98;
+$color-pink: #e0aa9d;
+$color-pink-light: #ffe4de;
+$color-orange: #d18048;
+
+// derived colors
+$color-text-darker: darken($color-text, 20%);
+$color-text-lighter: lighten($color-text, 25%);

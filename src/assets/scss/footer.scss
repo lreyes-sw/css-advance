@@ -1,0 +1,17 @@
+@import "colors.scss";
+@import "fonts.scss";
+
+footer {
+  background: $color-text;
+  padding: 2.5rem 0;
+  position: static;
+  bottom: 0;
+  width: 100%;
+  > div {
+    padding-left: 1rem;
+    font-family: $font-title;
+    color: $color-background;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+}

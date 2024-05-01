@@ -1,0 +1,13 @@
+@import "colors.scss";
+@import "fonts.scss";
+
+.header {
+  background: $color-text;
+  padding: 1rem;
+  > div {
+    font-family: $font-title;
+    color: $color-background;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+}
