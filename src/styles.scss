@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import "colors.scss";
+@import "fonts.scss";
+
+html,
+body {
+  color: $color-text;
+  font-family: $font-text;
+  height: 100%;
+  margin: 0;
+}
