@@ -1,0 +1,20 @@
+@import "colors.scss";
+@import "fonts.scss";
+
+.home {
+  background: url(../../../assets/img/background.png);
+  height: calc(100vh - 59px);
+  background-size: cover;
+  background-repeat: round;
+  text-align: center;
+  padding-top: 20vh;
+
+  > h1 {
+    font-family: "Bebas+Neue", sans-serif;
+    text-transform: uppercase;
+    font-size: 3rem;
+    border-bottom: 1px solid $color-orange;
+    margin: 0 10rem 10px 10rem;
+    padding-bottom: 10px;
+  }
+}
