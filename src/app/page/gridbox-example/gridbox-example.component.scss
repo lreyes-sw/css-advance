@@ -1,0 +1,54 @@
+// Import
+@import "colors.scss";
+
+// Ejemplo basico
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+  background-color: $color-pink-light;
+
+  .grid-item {
+    background-color: $color-orange;
+    color: $color-background;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+// Ejemplo template areas
+.item-a {
+  grid-area: header;
+  background-color: $color-orange;
+}
+.item-b {
+  grid-area: main;
+  background-color: $color-pink-light;
+}
+.item-c {
+  grid-area: sidebar;
+  background-color: $color-pink;
+}
+.item-d {
+  grid-area: footer;
+  background-color: $color-orange;
+}
+
+.grid-template-container {
+  background-color: #f0f0f0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 4rem 10rem 2rem;
+  gap: 10px;
+  grid-template-areas:
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+
+  > div {
+    color: $color-background;
+    padding: 20px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,45 @@
+// Import partial
+@use "partial_example";
+
+// Import
+@import "colors.scss";
+@import "fonts.scss";
+
+// Variables
+$primary-color: $color-orange;
+
+// Variable using partial class
+$box-size: partial_example.$size_container;
+
+// Mixin
+@mixin box-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+// Extend
+%border-radius {
+  border-radius: 5px;
+}
+
+// Conditional Function
+@function lighten-or-darken($color, $amount) {
+  @if lightness($color) > 50 {
+    @return lighten($color, $amount);
+  } @else {
+    @return darken($color, $amount);
+  }
+}
+
+.box {
+  width: $box-size;
+  height: $box-size;
+  background-color: $primary-color;
+  @include box-shadow;
+  @extend %border-radius;
+  margin: 20px auto;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: lighten-or-darken($primary-color, 10%);
+  }
+}
