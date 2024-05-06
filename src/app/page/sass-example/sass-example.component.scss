@@ -30,16 +30,29 @@ $box-size: partial_example.$size_container;
   }
 }
 
-.box {
-  width: $box-size;
-  height: $box-size;
-  background-color: $primary-color;
-  @include box-shadow;
-  @extend %border-radius;
-  margin: 20px auto;
-  transition: background-color 0.3s;
+.sass-example {
+  margin: 1rem;
 
-  &:hover {
-    background-color: lighten-or-darken($primary-color, 10%);
+  > .box-container {
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: $color-pink-light;
+    padding: 2rem;
+
+    .box {
+      width: $box-size;
+      height: $box-size;
+      background-color: $primary-color;
+      @include box-shadow;
+      @extend %border-radius;
+      margin: 20px auto;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: lighten-or-darken($primary-color, 10%);
+      }
+    }
   }
 }
