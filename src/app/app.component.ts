@@ -1,17 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
 //Components
 import { HeaderComponent } from '../app/components/header/header.component';
-import { FooterComponent } from '../app/components/footer/footer.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, RouterOutlet],
+  imports: [HeaderComponent, RouterOutlet, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'css-advance';
+  currentRoute: string = '';
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      console.log(event);
+      if (event instanceof NavigationEnd) {
+        console.log(event.url);
+        this.currentRoute = event.url;
+      }
+    });
+  }
 }
