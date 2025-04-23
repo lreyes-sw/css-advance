@@ -2,6 +2,7 @@
 @import "fonts.scss";
 
 $color-orange: orange;
+$color-pink-component: $color-pink;
 
 .home {
   background: url(../../../assets/img/background.png);
@@ -9,7 +10,7 @@ $color-orange: orange;
   background-size: cover;
   background-repeat: round;
   text-align: center;
-  padding-top: 22vh;
+  padding-top: 25vh;
 
   > h1 {
     font-family: "Bebas+Neue", sans-serif;
@@ -26,7 +27,6 @@ $color-orange: orange;
     justify-content: center;
     gap: 15px;
     font-size: 2rem;
-    text-decoration: none;
 
     a {
       text-decoration: none;

@@ -1,4 +1,6 @@
 <article>
-  <app-header *ngIf="currentRoute !== '/home'"></app-header>
+  <app-header
+    *ngIf="currentRoute !== '/home' && currentRoute !== '/'"
+  ></app-header>
   <router-outlet></router-outlet>
 </article>

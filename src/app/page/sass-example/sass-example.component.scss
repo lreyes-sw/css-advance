@@ -1,5 +1,5 @@
 // Import partial
-@use "partial_example";
+@use "_partial_example";
 
 // Import
 @import "colors.scss";
@@ -12,8 +12,8 @@ $primary-color: $color-orange;
 $box-size: partial_example.$size_container;
 
 // Mixin
-@mixin box-shadow {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+@mixin box-shadow($color: blue) {
+  box-shadow: 0 4px 8px $color;
 }
 
 // Extend
@@ -23,7 +23,7 @@ $box-size: partial_example.$size_container;
 
 // Conditional Function
 @function lighten-or-darken($color, $amount) {
-  @if lightness($color) > 50 {
+  @if lightness($color) > 20 {
     @return lighten($color, $amount);
   } @else {
     @return darken($color, $amount);
@@ -45,7 +45,7 @@ $box-size: partial_example.$size_container;
       width: $box-size;
       height: $box-size;
       background-color: $primary-color;
-      @include box-shadow;
+      @include box-shadow(black);
       @extend %border-radius;
       margin: 20px auto;
       transition: background-color 0.3s;
